@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: dairyospro-server
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+  - type: web
+    name: dairyospro-ml
+    env: python
+    buildCommand: cd ml-model && pip install -r requirements.txt
+    startCommand: cd ml-model && python app.py
